@@ -1,0 +1,38 @@
+.navbar {
+    background: #063368;
+    height: 50px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        color: #fff;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #fff;
+            
+            span {
+                display: flex;
+                align-items: center;
+                font-size: 26px;
+            }
+        }
+        .nav-item{
+            display: flex;
+            gap: 10px;
+            button{
+                border: none;
+                padding: 3px 10px;
+                font-weight: 500;
+                color: #144680;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,168 @@
+.header {
+    display: flex;
+    align-items: center;
+    background: #063368;
+    padding: 20px 0 70px;
+    position: relative;
+
+    .container {
+        color: #fff;
+
+        .header-list {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .header-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 22px;
+                padding: 5px 10px;
+
+                span {
+                    font-size: 16px;
+                }
+
+                &.active {
+                    border: 1px solid #fff;
+                    border-radius: 20px;
+                    -webkit-border-radius: 20px;
+                    -moz-border-radius: 20px;
+                    -ms-border-radius: 20px;
+                    -o-border-radius: 20px;
+                }
+            }
+        }
+
+        .header-content {
+            margin-top: 40px;
+
+            h1 {
+                font-size: 40px;
+            }
+
+            p {
+                font-size: 17px;
+
+            }
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .search-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 20px;
+                padding: 10px 30px;
+                background: #034ea3;
+                width: 70%;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                position: absolute;
+                bottom: -30px;
+
+                .search-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+
+                    .date {
+                        position: absolute;
+                        top: 45px;
+                        z-index: 9;
+                    }
+
+                    .css-1pysi21-MuiFormLabel-root-MuiInputLabel-root {
+                        color: #fff;
+                        font-size: 15px;
+                    }
+
+                    .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+                        color: #fff;
+                    }
+
+                    .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+                        border-color: #fff;
+                    }
+
+                    .text-field {
+                        color: #fff;
+                    }
+
+                    span {
+                        cursor: pointer;
+                    }
+
+                    .icon {
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+
+                    .options {
+                        width: 300px;
+                        position: absolute;
+                        top: 45px;
+                        background: #f2f2f2;
+                        padding: 20px 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 10px;
+                        z-index: 9;
+
+                        .option-item {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .option-text {
+                                font-weight: 500;
+                            }
+
+                            .option-counter {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                span {
+                                    width: 10px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 500;
+                                    font-size: 14px;
+                                }
+
+                                button {
+                                    padding: 5px 15px;
+                                    font-weight: bold;
+                                    border: none;
+                                    background: #0e5272;
+                                    color: #fff;
+                                    border-radius: 3px;
+                                    -webkit-border-radius: 3px;
+                                    -moz-border-radius: 3px;
+                                    -ms-border-radius: 3px;
+                                    -o-border-radius: 3px;
+
+                                    &:disabled{
+                                        cursor: not-allowed;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
