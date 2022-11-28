@@ -1,0 +1,38 @@
+.login{
+    width: 100%;
+    
+    .container{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .login-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h3{
+                font-size: 25px;
+                color: #333;
+                margin: 0;
+            }
+            .icon{
+                color: #133e8d;
+                font-size: 34px;
+            }
+            .form-field{
+                width: 100%;
+            }
+            .login-btn{
+                padding: 7px 40px;
+                margin-top: 10px;
+            }
+        }
+    }
+}

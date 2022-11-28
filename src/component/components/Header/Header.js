@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.scss';
 import { FaBed, FaCar, FaCarSide, FaHotel, FaPlane } from 'react-icons/fa';
 import { RiHotelFill } from 'react-icons/ri';
@@ -10,6 +10,8 @@ import 'react-date-range/dist/theme/default.css';
 import { format } from 'date-fns';
 import { Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import DataContext from '../../utilities/ContextAPI/DataContext';
+import AuthContext from '../../utilities/ContextAPI/AuthContext';
 
 const Header = ({ type }) => {
     const [destination, setDestination] = useState('');
@@ -27,7 +29,9 @@ const Header = ({ type }) => {
             key: 'selection'
         }
     ]);
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const {dispatch} = useContext(DataContext);
 
     const handleOption = (name, operation) => {
         setOptions((prev) => {
@@ -39,6 +43,7 @@ const Header = ({ type }) => {
     }
 
     const handleSearch = () => {
+        dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
         navigate('/hotels', { state: { destination, date, options } });
     }
 
@@ -73,7 +78,7 @@ const Header = ({ type }) => {
                         <div className="header-content">
                             <h1>A life time of discounts? It's Genius</h1>
                             <p>Get rewarded for your travels - unlock instant savings of 10% with a free account</p>
-                            <button className='brand-btn'>Register</button>
+                            {!user && <button className='brand-btn'>Register</button>}
                         </div>
                         <div className="header-search">
                             <div className="search-content">

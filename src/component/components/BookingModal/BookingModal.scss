@@ -1,0 +1,58 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background: #fff;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        .info {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-weight: 500;
+
+            h4 {
+                font-size: 20px;
+                margin-bottom: 0;
+                text-transform: uppercase;
+                color: #175d7e;
+                font-weight: bold;
+            }
+        }
+
+        .rooms {
+            flex: 2;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            .room {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-weight: 500;
+                font-size: 14px;
+                padding: 5px 10px;
+                background: #fff2cd;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+            }
+        }
+
+    }
+}

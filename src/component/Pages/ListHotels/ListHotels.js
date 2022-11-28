@@ -8,14 +8,21 @@ import './ListHotels.scss';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import SearchedHotel from '../../components/SearchedHotel/SearchedHotel';
+import UseFetch from '../../utilities/Hooks/UseFetch';
 
 const ListHotels = () => {
     const location = useLocation();
     const [destination, setDestination] = useState(location.state.destination);
     const [date, setDate] = useState(location.state.date);
     const [options, setOptions] = useState(location.state.options);
+    const [min, setMin] = useState(undefined);
+    const [max, setMax] = useState(undefined);
     const [openDate, setOpenDate] = useState(false);
+    const { data, loading, error, reFetch } = UseFetch(`http://localhost:30000/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`);
 
+    const handleSearch = () =>{
+        reFetch();
+    }
     return (
         <>
             <Navbar></Navbar>
@@ -41,11 +48,11 @@ const ListHotels = () => {
                             <label className='lebel'>Options</label>
                             <div className="option-item">
                                 <span>Min Price <small>per night</small></span>
-                                <input type="number" />
+                                <input type="number" onChange={(e)=> setMin(e.target.value)} />
                             </div>
                             <div className="option-item">
                                 <span>Max Price <small>per night</small></span>
-                                <input type="number" />
+                                <input type="number" onChange={(e)=> setMax(e.target.value)} />
                             </div>
                             <div className="option-item">
                                 <span>Adult</span>
@@ -60,15 +67,15 @@ const ListHotels = () => {
                                 <input type="number" min={1} placeholder={options.room} />
                             </div>
                         </div>
-                        <button className="brand-btn">Search</button>
+                        <button className="brand-btn" onClick={handleSearch}>Search</button>
                     </div>
                     <div className="result">
-                        <SearchedHotel></SearchedHotel>
-                        <SearchedHotel></SearchedHotel>
-                        <SearchedHotel></SearchedHotel>
-                        <SearchedHotel></SearchedHotel>
-                        <SearchedHotel></SearchedHotel>
-                        <SearchedHotel></SearchedHotel>
+                        {loading
+                            ? <span style={{ color: '#000' }}>Loading</span>
+                            : <>{data.map(item => (
+                                <SearchedHotel item={item} key={item._id}></SearchedHotel>
+                            ))}</>
+                        }
                     </div>
                 </div>
             </div>
